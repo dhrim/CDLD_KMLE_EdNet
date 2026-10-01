@@ -7,10 +7,9 @@ Repository: https://github.com/dhrim/CDLD_KMLE_EdNet
 
 ```bash
 python -m pip install -r requirements.txt
-python reproduce.py
 ```
 
-Open **paper_results.ipynb** for the same calculation with visible tables and figures. Outputs are written to `outputs/`.
+Open **paper_results.ipynb** from this repository directory and select **Run All**. All table and figure reconstruction code is contained in this notebook, together with its outputs. Outputs are written to `outputs/`.
 
 - Table 1: five-run IRT prediction means, CDLD increments, conditional intervals.
 - Table 2: EdNet part log loss, balanced accuracy, macro-F1 and paired contrast.

@@ -1,5 +1,11 @@
 # CDLD: KMLE and EdNet
 
+![Graphical abstract](graphical_abstract/20261004_graphical_abstract.png)
+
+[Vector image](graphical_abstract/20261004_graphical_abstract.svg) · [Python source](graphical_abstract/20261004_graphical_abstract.py)
+
+Regenerate with `python graphical_abstract/20261004_graphical_abstract.py` (requires Matplotlib). Values are from manuscript Tables 1–2.
+
 Code and final numerical results for the KMLE–EdNet representation study.
 Repository: https://github.com/dhrim/CDLD_KMLE_EdNet
 
@@ -31,10 +37,3 @@ Obtain KMLE from its original data source, DOI **10.7910/DVN/PETWZF**, and EdNet
 
 Only final result reconstruction and scientific implementations are included. Manuscript drafts, review discussions, transfer scripts and intermediate audit reports are excluded.
 
-## Graphical abstract
-
-![Graphical abstract](graphical_abstract/20261004_graphical_abstract.png)
-
-[Vector image](graphical_abstract/20261004_graphical_abstract.svg) · [Python source](graphical_abstract/20261004_graphical_abstract.py)
-
-Regenerate with `python graphical_abstract/20261004_graphical_abstract.py` (requires Matplotlib). Values are from manuscript Tables 1–2.

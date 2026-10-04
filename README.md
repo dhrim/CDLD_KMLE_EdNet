@@ -30,3 +30,11 @@ Open **paper_results.ipynb** from this repository directory and select **Run All
 Obtain KMLE from its original data source, DOI **10.7910/DVN/PETWZF**, and EdNet-KT1 and questions metadata from **https://github.com/riiid/ednet**. The training notebooks specify the expected filenames. Original response data, individual predictions and model checkpoints are not distributed here. Use the original providers' access and reuse terms.
 
 Only final result reconstruction and scientific implementations are included. Manuscript drafts, review discussions, transfer scripts and intermediate audit reports are excluded.
+
+## Graphical abstract
+
+![Graphical abstract](graphical_abstract/20261004_graphical_abstract.png)
+
+[Vector image](graphical_abstract/20261004_graphical_abstract.svg) · [Python source](graphical_abstract/20261004_graphical_abstract.py)
+
+Regenerate with `python graphical_abstract/20261004_graphical_abstract.py` (requires Matplotlib). Values are from manuscript Tables 1–2.

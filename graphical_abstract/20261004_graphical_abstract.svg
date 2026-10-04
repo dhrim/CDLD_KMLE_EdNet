@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1152pt" height="720pt" viewBox="0 0 1152 720" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-04T14:17:20.191932</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 720 
+L 1152 720 
+L 1152 0 
+L 0 0 
+z
+" style="fill: #f6f8fb"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 56.16 226.08 
+L 397.44 226.08 
+Q 408.24 226.08 408.24 215.28 
+L 408.24 110.16 
+Q 408.24 99.36 397.44 99.36 
+L 56.16 99.36 
+Q 45.36 99.36 45.36 110.16 
+L 45.36 215.28 
+Q 45.36 226.08 56.16 226.08 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #ffffff; stroke: #dbe3ec; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 419.601665 163.44 
+Q 440.281823 163.44 459.061323 163.44 
+" clip-path="url(#pe91b6e9383)" style="fill: none; stroke: #586b7d; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 452.661323 160.24 
+L 459.061323 163.44 
+L 452.661323 166.64 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #586b7d; stroke: #586b7d; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 483.12 226.08 
+L 1095.84 226.08 
+Q 1106.64 226.08 1106.64 215.28 
+L 1106.64 110.16 
+Q 1106.64 99.36 1095.84 99.36 
+L 483.12 99.36 
+Q 472.32 99.36 472.32 110.16 
+L 472.32 215.28 
+Q 472.32 226.08 483.12 226.08 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #eaf3f5; stroke: #c7dfe1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 782.80524 226.253188 
+Q 552.599244 246.240066 324.286782 266.062543 
+" clip-path="url(#pe91b6e9383)" style="fill: none; stroke: #586b7d; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 330.939584 268.696973 
+L 324.286782 266.062543 
+L 330.386008 262.32096 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #586b7d; stroke: #586b7d; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 786.469702 227.180039 
+Q 815.400976 246.240643 842.745086 264.255586 
+" clip-path="url(#pe91b6e9383)" style="fill: none; stroke: #586b7d; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 839.161201 258.062382 
+L 842.745086 264.255586 
+L 835.640192 263.406771 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #586b7d; stroke: #586b7d; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 56.16 604.8 
+L 552.96 604.8 
+Q 563.76 604.8 563.76 594 
+L 563.76 281.52 
+Q 563.76 270.72 552.96 270.72 
+L 56.16 270.72 
+Q 45.36 270.72 45.36 281.52 
+L 45.36 594 
+Q 45.36 604.8 56.16 604.8 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #ffffff; stroke: #dbe3ec; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 591.12 604.8 
+L 1095.84 604.8 
+Q 1106.64 604.8 1106.64 594 
+L 1106.64 281.52 
+Q 1106.64 270.72 1095.84 270.72 
+L 591.12 270.72 
+Q 580.32 270.72 580.32 281.52 
+L 580.32 594 
+Q 580.32 604.8 591.12 604.8 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #ffffff; stroke: #dbe3ec; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 320.4 506.88 
+L 320.4 423.36 
+" clip-path="url(#pe91b6e9383)" style="fill: none; stroke: #e2e8ef; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 416.88 506.88 
+L 416.88 423.36 
+" clip-path="url(#pe91b6e9383)" style="fill: none; stroke: #e2e8ef; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 513.36 506.88 
+L 513.36 423.36 
+" clip-path="url(#pe91b6e9383)" style="fill: none; stroke: #e2e8ef; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 870.319336 401.04 
+Q 899.997838 401.04 927.775683 401.04 
+" clip-path="url(#pe91b6e9383)" style="fill: none; stroke: #586b7d; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 921.375683 397.84 
+L 927.775683 401.04 
+L 921.375683 404.24 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #586b7d; stroke: #586b7d; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 56.16 678.24 
+L 1095.84 678.24 
+Q 1106.64 678.24 1106.64 667.44 
+L 1106.64 634.32 
+Q 1106.64 623.52 1095.84 623.52 
+L 56.16 623.52 
+Q 45.36 623.52 45.36 634.32 
+L 45.36 667.44 
+Q 45.36 678.24 56.16 678.24 
+z
+" clip-path="url(#pe91b6e9383)" style="fill: #193249; stroke: #193249; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="46.8" y="55.263438" transform="rotate(-0 46.8 55.263438)">CDLD: additional information in learned representations</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586b7d" x="46.8" y="81.412187" transform="rotate(-0 46.8 81.412187)">Secondary analysis of Korean Medical Licensing Examination (KMLE) and EdNet response data</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="64.8" y="128.186563" transform="rotate(-0 64.8 128.186563)">CORRECT / INCORRECT RESPONSES</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="64.8" y="163.962031" transform="rotate(-0 64.8 163.962031)">KMLE</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="147.6" y="160.488359" transform="rotate(-0 147.6 160.488359)">3,259 examinees × 360 items</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="64.8" y="199.382812" transform="rotate(-0 64.8 199.382812)">EdNet</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="147.6" y="195.172187" transform="rotate(-0 147.6 195.172187)">79.9 million response records</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="493.92" y="128.062812" transform="rotate(-0 493.92 128.062812)">CYCLIC DUAL LATENT DISCOVERY (CDLD)</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="493.92" y="164.102812" transform="rotate(-0 493.92 164.102812)">Student Latent Finder  ↔  Item Latent Finder</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="493.92" y="193.45125" transform="rotate(-0 493.92 193.45125)">Alternating updates → freeze 64-dimensional student and item vectors</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="66.96" y="305.036797" transform="rotate(-0 66.96 305.036797)">01   IRT ESTIMATE PREDICTION</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="66.96" y="338.401406" transform="rotate(-0 66.96 338.401406)">Information beyond augmented response summaries</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586b7d" x="66.96" y="366.690313" transform="rotate(-0 66.96 366.690313)">Exploratory comparison · nested cross-validation</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="66.96" y="406.358438" transform="rotate(-0 66.96 406.358438)">KMLE · 2PL log discrimination</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #586b7d" x="320.4" y="527.129844" transform="rotate(-0 320.4 527.129844)">0.85</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #586b7d" x="416.88" y="527.129844" transform="rotate(-0 416.88 527.129844)">0.90</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #586b7d" x="513.36" y="527.129844" transform="rotate(-0 513.36 527.129844)">0.95</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586b7d" x="69.12" y="437.250313" transform="rotate(-0 69.12 437.250313)">Augmented summaries</text>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m1a2f86eb83" d="M 0 4.358899 
+C 1.155994 4.358899 2.264796 3.899618 3.082207 3.082207 
+C 3.899618 2.264796 4.358899 1.155994 4.358899 0 
+C 4.358899 -1.155994 3.899618 -2.264796 3.082207 -3.082207 
+C 2.264796 -3.899618 1.155994 -4.358899 0 -4.358899 
+C -1.155994 -4.358899 -2.264796 -3.899618 -3.082207 -3.082207 
+C -3.899618 -2.264796 -4.358899 -1.155994 -4.358899 0 
+C -4.358899 1.155994 -3.899618 2.264796 -3.082207 3.082207 
+C -2.264796 3.899618 -1.155994 4.358899 0 4.358899 
+z
+" style="stroke: #586b7d"/>
+    </defs>
+    <g clip-path="url(#pe91b6e9383)">
+     <use xlink:href="#m1a2f86eb83" x="370.37664" y="432.72" style="fill: #586b7d; stroke: #586b7d"/>
+    </g>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586b7d" x="378.29664" y="438.218828" transform="rotate(-0 378.29664 438.218828)">0.8759</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7490ae" x="69.12" y="469.275937" transform="rotate(-0 69.12 469.275937)">Summaries + SVD64</text>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="meb1bf8b6b4" d="M 0 4.358899 
+C 1.155994 4.358899 2.264796 3.899618 3.082207 3.082207 
+C 3.899618 2.264796 4.358899 1.155994 4.358899 0 
+C 4.358899 -1.155994 3.899618 -2.264796 3.082207 -3.082207 
+C 2.264796 -3.899618 1.155994 -4.358899 0 -4.358899 
+C -1.155994 -4.358899 -2.264796 -3.899618 -3.082207 -3.082207 
+C -3.899618 -2.264796 -4.358899 -1.155994 -4.358899 0 
+C -4.358899 1.155994 -3.899618 2.264796 -3.082207 3.082207 
+C -2.264796 3.899618 -1.155994 4.358899 0 4.358899 
+z
+" style="stroke: #7490ae"/>
+    </defs>
+    <g clip-path="url(#pe91b6e9383)">
+     <use xlink:href="#meb1bf8b6b4" x="407.232" y="463.68" style="fill: #7490ae; stroke: #7490ae"/>
+    </g>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7490ae" x="415.152" y="469.178828" transform="rotate(-0 415.152 469.178828)">0.8950</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="69.12" y="500.235938" transform="rotate(-0 69.12 500.235938)">Summaries + CDLD</text>
+   </g>
+   <g id="PathCollection_3">
+    <defs>
+     <path id="m6e037754d2" d="M 0 4.358899 
+C 1.155994 4.358899 2.264796 3.899618 3.082207 3.082207 
+C 3.899618 2.264796 4.358899 1.155994 4.358899 0 
+C 4.358899 -1.155994 3.899618 -2.264796 3.082207 -3.082207 
+C 2.264796 -3.899618 1.155994 -4.358899 0 -4.358899 
+C -1.155994 -4.358899 -2.264796 -3.899618 -3.082207 -3.082207 
+C -3.899618 -2.264796 -4.358899 -1.155994 -4.358899 0 
+C -4.358899 1.155994 -3.899618 2.264796 -3.082207 3.082207 
+C -2.264796 3.899618 -1.155994 4.358899 0 4.358899 
+z
+" style="stroke: #007f83"/>
+    </defs>
+    <g clip-path="url(#pe91b6e9383)">
+     <use xlink:href="#m6e037754d2" x="458.55936" y="494.64" style="fill: #007f83; stroke: #007f83"/>
+    </g>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="466.47936" y="500.138828" transform="rotate(-0 466.47936 500.138828)">0.9216</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #193249" x="532.8" y="415.257031" transform="rotate(-0 532.8 415.257031)">R²</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="67.68" y="563.761406" transform="rotate(-0 67.68 563.761406)">EdNet · 2PL log discrimination</text>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="67.68" y="592.089375" transform="rotate(-0 67.68 592.089375)">R²: 0.6727 → 0.8923 with CDLD added</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="601.92" y="305.036797" transform="rotate(-0 601.92 305.036797)">02   ITEM-CATEGORY CLASSIFICATION</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="601.92" y="339.398437" transform="rotate(-0 601.92 339.398437)">EdNet · seven item categories (part)</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586b7d" x="601.92" y="366.690313" transform="rotate(-0 601.92 366.690313)">Category labels were not used to learn CDLD vectors</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586b7d" x="601.92" y="405.13125" transform="rotate(-0 601.92 405.13125)">IRT + response summaries</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #007f83" x="1004.4" y="406.187813" transform="rotate(-0 1004.4 406.187813)">+ CDLD</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="601.92" y="449.004375" transform="rotate(-0 601.92 449.004375)">Log loss ↓</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #586b7d" x="826.56" y="457.379687" transform="rotate(-0 826.56 457.379687)">1.5384</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #007f83" x="1004.4" y="457.379687" transform="rotate(-0 1004.4 457.379687)">1.2746</text>
+   </g>
+   <g id="text_35">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193249" x="601.92" y="500.844375" transform="rotate(-0 601.92 500.844375)">Balanced accuracy ↑</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #586b7d" x="826.56" y="509.219687" transform="rotate(-0 826.56 509.219687)">0.1844</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #007f83" x="1004.4" y="509.219687" transform="rotate(-0 1004.4 509.219687)">0.3413</text>
+   </g>
+   <g id="text_38">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="601.92" y="566.918437" transform="rotate(-0 601.92 566.918437)">Additional item-category information</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #007f83" x="601.92" y="590.89125" transform="rotate(-0 601.92 590.89125)">beyond IRT estimates and response summaries</text>
+   </g>
+   <g id="text_40">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="576" y="659.189531" transform="rotate(-0 576 659.189531)">Correctness-trained representations add information for examinee and item analysis.</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #586b7d" x="50.4" y="700.928437" transform="rotate(-0 50.4 700.928437)">IRT = item response theory; 2PL = two-parameter logistic model; SVD64 = 64-dimensional singular value decomposition representation.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe91b6e9383">
+   <rect x="0" y="0" width="1152" height="720"/>
+  </clipPath>
+ </defs>
+</svg>

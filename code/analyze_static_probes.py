@@ -38,14 +38,6 @@ def weighted_r2(y: np.ndarray, p: np.ndarray, w: np.ndarray) -> float:
     return float(1 - np.sum(w * (y-p)**2) / total) if total > 0 else float("nan")
 
 
-def weighted_log_loss(y: np.ndarray, probability_columns: np.ndarray, w: np.ndarray) -> float:
-    classes = np.sort(np.unique(y))
-    lookup = {value: index for index, value in enumerate(classes)}
-    selected = np.array([probability_columns[i, lookup[value]] for i, value in enumerate(y)])
-    selected = np.clip(selected, 1e-12, 1)
-    return float(np.average(-np.log(selected), weights=w))
-
-
 def bootstrap_contrast(frame: pd.DataFrame, unit: str, dataset: str, target: str, baseline: str, extended: str) -> dict:
     subset = frame[(frame.dataset == dataset) & (frame.unit == unit) & (frame.target == target)]
     a = subset[subset.features == baseline].copy()
@@ -63,27 +55,16 @@ def bootstrap_contrast(frame: pd.DataFrame, unit: str, dataset: str, target: str
         for seed, group in by_seed.items():
             w = mult[index[seed]]
             y = group.actual.to_numpy(float)
-            if target == "part":
-                cols_a = sorted([c for c in group if c.startswith("probability_part_") and c.endswith("_baseline")])
-                cols_b = sorted([c for c in group if c.startswith("probability_part_") and c.endswith("_extended")])
-                pa, pb = group[cols_a].to_numpy(float), group[cols_b].to_numpy(float)
-                values.append(weighted_log_loss(y, pa, w) - weighted_log_loss(y, pb, w))
-            else:
-                values.append(weighted_r2(y, group.predicted_extended.to_numpy(float), w) - weighted_r2(y, group.predicted_baseline.to_numpy(float), w))
+            values.append(weighted_r2(y, group.predicted_extended.to_numpy(float), w) - weighted_r2(y, group.predicted_baseline.to_numpy(float), w))
         draws[draw] = np.nanmean(values)
     observed = []
     for _, group in by_seed.items():
         y, w = group.actual.to_numpy(float), np.ones(len(group))
-        if target == "part":
-            cols_a = sorted([c for c in group if c.startswith("probability_part_") and c.endswith("_baseline")])
-            cols_b = sorted([c for c in group if c.startswith("probability_part_") and c.endswith("_extended")])
-            observed.append(weighted_log_loss(y, group[cols_a].to_numpy(float), w) - weighted_log_loss(y, group[cols_b].to_numpy(float), w))
-        else:
-            observed.append(weighted_r2(y, group.predicted_extended.to_numpy(float), w) - weighted_r2(y, group.predicted_baseline.to_numpy(float), w))
+        observed.append(weighted_r2(y, group.predicted_extended.to_numpy(float), w) - weighted_r2(y, group.predicted_baseline.to_numpy(float), w))
     return {
         "dataset": dataset, "unit": unit, "target": target,
         "baseline": baseline, "extended": extended,
-        "metric": "delta_log_loss_B1_minus_M1" if target == "part" else "delta_oof_r2_M1_minus_B1",
+        "metric": "delta_oof_r2_M1_minus_B1",
         "estimate": float(np.mean(observed)),
         "ci_low": float(np.quantile(draws, .025)), "ci_high": float(np.quantile(draws, .975)),
         "p_improvement_le_0": float((np.sum(draws <= 0)+1)/(BOOTSTRAPS+1)),
@@ -93,7 +74,7 @@ def bootstrap_contrast(frame: pd.DataFrame, unit: str, dataset: str, target: str
 
 def stability() -> pd.DataFrame:
     rows = []
-    for dataset in ["KMLE", "EdNet"]:
+    for dataset in ["KMLE"]:
         for model, filename, params in [
             ("Rasch", "Rasch_item_parameters.csv", ["b"]),
             ("2PL", "2PL_item_parameters.csv", ["a", "b"]),
@@ -124,12 +105,11 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     frame = pd.read_csv(STATIC / "oof_predictions.csv.gz")
     specs = []
-    for dataset in ["KMLE", "EdNet"]:
+    for dataset in ["KMLE"]:
         for target in ["Rasch_theta", "2PL_theta"]:
             specs.append(("student", dataset, target, "response_rate", "latent64"))
         for target in ["Rasch_b", "2PL_b", "2PL_log_a"]:
             specs.append(("item", dataset, target, "response_summaries", "latent64"))
-    specs.append(("item", "EdNet", "part", "irt_response_controls", "irt_response_controls_plus_latent64"))
     summaries, draws = [], {}
     for spec in specs:
         result, values = bootstrap_contrast(frame, *spec)

@@ -14,10 +14,10 @@ spec=importlib.util.spec_from_file_location('inference',Path(__file__).with_name
 def status(phase,**kw):
  p=OUT/'bootstrap_status.json';t=p.with_suffix('.pending');t.write_text(json.dumps(dict(phase=phase,updated=time.time(),**kw),indent=2));t.replace(p)
 try:
- if not all((OUT/f'{ds}_seed{seed}/complete.json').exists() for ds in ['KMLE','EdNet'] for seed in range(42,47)):
+ if not all((OUT/f'{ds}_seed{seed}/complete.json').exists() for ds in ['KMLE'] for seed in range(42,47)):
   raise RuntimeError('Run run_review.py to completion first.')
  rows=[];draws={};metrics=[]
- for ds in ['KMLE','EdNet']:
+ for ds in ['KMLE']:
   frames=[]
   for seed in range(42,47):
    p=OUT/f'{ds}_seed{seed}';assert json.loads((p/'complete.json').read_text())['cells']==60
@@ -25,7 +25,7 @@ try:
   frame=pd.concat(frames,ignore_index=True)
   for unit,target in [('student','Rasch_theta'),('student','2PL_theta'),('item','Rasch_b'),('item','2PL_b'),('item','2PL_log_a')]:
    for baseline,extended in [('B1','B1+L'),('B1+S','B1+L'),('B0','L')]:
-    status('bootstrap',completed=len(rows),total=30,dataset=ds,target=target,baseline=baseline,extended=extended)
+    status('bootstrap',completed=len(rows),total=15,dataset=ds,target=target,baseline=baseline,extended=extended)
     summary,values=old.bootstrap_contrast(frame,unit,ds,target,baseline,extended)
     # The bootstrap tail fraction is descriptive, not a new null-hypothesis p-value.
     summary['bootstrap_fraction_nonpositive_corrected']=summary.pop('p_improvement_le_0')
@@ -33,9 +33,9 @@ try:
     pd.DataFrame(rows).to_csv(OUT/'paired_bootstrap_summary.partial.csv',index=False)
  pd.DataFrame(rows).to_csv(OUT/'paired_bootstrap_summary.csv',index=False)
  np.savez_compressed(OUT/'bootstrap_draws.npz',**draws)
- allmetrics=pd.concat(metrics,ignore_index=True);assert len(allmetrics)==600
+ allmetrics=pd.concat(metrics,ignore_index=True);assert len(allmetrics)==300
  allmetrics.to_csv(OUT/'all_metrics.csv',index=False)
  allmetrics.groupby(['dataset','unit','target','features']).r2.agg(['mean','std','min','max']).reset_index().to_csv(OUT/'mean_r2.csv',index=False)
- status('complete',completed=30,total=30)
+ status('complete',completed=15,total=15)
 except Exception:
  status('failed',error=traceback.format_exc());raise

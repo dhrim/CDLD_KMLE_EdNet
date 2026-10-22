@@ -1,4 +1,4 @@
-"""Run preregistered RQ2 psychometric and EdNet part probes on frozen 5x10 artifacts."""
+"""Run the planned KMLE IRT probes on frozen 5x10 artifacts."""
 
 from __future__ import annotations
 
@@ -10,15 +10,12 @@ import time
 
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LogisticRegression, Ridge
+from sklearn.linear_model import Ridge
 from sklearn.metrics import (
-    balanced_accuracy_score,
-    f1_score,
-    log_loss,
     mean_squared_error,
     r2_score,
 )
-from sklearn.model_selection import GridSearchCV, KFold, StratifiedKFold
+from sklearn.model_selection import GridSearchCV, KFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from scipy.stats import pearsonr, spearmanr
@@ -26,11 +23,9 @@ from scipy.stats import pearsonr, spearmanr
 
 SOURCE = (WORKSPACE / '20260917_cdld_finder_5x10/results')
 CACHE = (WORKSPACE / '20260914_cdld_reviewer/cache')
-QUESTIONS = (WORKSPACE / '20260914_cdld_reviewer/data/questions.csv')
 OUTPUT = (WORKSPACE / '20260920_representation_study/results/static_probes')
 SEEDS = [42, 43, 44, 45, 46]
 RIDGE_ALPHAS = np.logspace(-6, 6, 13)
-LOGISTIC_C = np.logspace(-4, 4, 9)
 OUTER_FOLDS = 5
 INNER_FOLDS = 5
 FOLD_SEED = 20260920
@@ -84,40 +79,6 @@ def regression_metrics(actual: np.ndarray, predicted: np.ndarray) -> dict:
         "pearson": safe_corr(pearsonr, actual, predicted),
         "spearman": safe_corr(spearmanr, actual, predicted),
     }
-
-
-def nested_part_decoder(features: np.ndarray, target: np.ndarray) -> tuple[np.ndarray, np.ndarray, list[dict]]:
-    outer = StratifiedKFold(OUTER_FOLDS, shuffle=True, random_state=FOLD_SEED)
-    classes = np.unique(target)
-    predicted = np.empty(len(target), dtype=target.dtype)
-    probabilities = np.full((len(target), len(classes)), np.nan)
-    fold_rows = []
-    for fold, (train, test) in enumerate(outer.split(features, target)):
-        model = Pipeline([
-            ("scale", StandardScaler()),
-            ("logistic", LogisticRegression(penalty="l2", solver="lbfgs", max_iter=2000)),
-        ])
-        inner = StratifiedKFold(INNER_FOLDS, shuffle=True, random_state=FOLD_SEED + fold + 1)
-        search = GridSearchCV(
-            model,
-            {"logistic__C": LOGISTIC_C},
-            scoring="neg_log_loss",
-            cv=inner,
-            n_jobs=1,
-            refit=True,
-        )
-        search.fit(features[train], target[train])
-        predicted[test] = search.predict(features[test])
-        fold_probability = search.predict_proba(features[test])
-        for column, label in enumerate(search.best_estimator_.named_steps["logistic"].classes_):
-            probabilities[test, np.flatnonzero(classes == label)[0]] = fold_probability[:, column]
-        fold_rows.append({
-            "fold": fold,
-            "train_n": int(len(train)),
-            "test_n": int(len(test)),
-            "C": float(search.best_params_["logistic__C"]),
-        })
-    return predicted, probabilities, fold_rows
 
 
 def response_summaries(data: np.ndarray, train_rows: np.ndarray, n_people: int, n_items: int):
@@ -192,45 +153,17 @@ def run_seed(dataset: str, seed: int, data: np.ndarray, questions: pd.DataFrame 
             }))
             fold_records.extend({"dataset":dataset,"seed":seed,"unit":"item","target":target_name,"features":feature_name,**fold} for fold in folds)
 
-    if dataset == "EdNet":
-        part = questions["part"].to_numpy(int)
-        valid = estimable
-        baseline = np.column_stack((
-            two_pl["a"].to_numpy(float), two_pl["b"].to_numpy(float), item_rate, np.log1p(item_count)
-        ))[valid]
-        extended = np.column_stack((baseline, np.asarray(item_latent[np.flatnonzero(valid)])))
-        part_ids = np.flatnonzero(valid)
-        for feature_name, features in [("irt_response_controls", baseline), ("irt_response_controls_plus_latent64", extended)]:
-            label, probability, folds = nested_part_decoder(features, part[valid])
-            record = {
-                "dataset":dataset,"seed":seed,"unit":"item","target":"part","features":feature_name,
-                "n":int(valid.sum()),"log_loss":float(log_loss(part[valid], probability, labels=np.unique(part))),
-                "balanced_accuracy":float(balanced_accuracy_score(part[valid], label)),
-                "macro_f1":float(f1_score(part[valid], label, average="macro")),
-            }
-            metrics.append(record)
-            frame = pd.DataFrame({
-                "dataset":dataset,"seed":seed,"unit":"item","target":"part","features":feature_name,
-                "entity_id":part_ids,"actual":part[valid],"predicted":label,
-            })
-            for index, class_label in enumerate(np.unique(part)):
-                frame[f"probability_part_{class_label}"] = probability[:, index]
-            prediction_frames.append(frame)
-            fold_records.extend({"dataset":dataset,"seed":seed,"unit":"item","target":"part","features":feature_name,**fold} for fold in folds)
     return metrics, prediction_frames, fold_records
 
 
 def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    questions = pd.read_csv(QUESTIONS).sort_values(
-        "question_id", key=lambda values: values.str[1:].astype(int)
-    ).reset_index(drop=True)
     all_metrics, all_predictions, all_folds = [], [], []
     started = time.time()
-    for dataset in ["KMLE", "EdNet"]:
+    for dataset in ["KMLE"]:
         data = np.load(CACHE / dataset / "full" / "responses.npy", mmap_mode="r")
         for seed in SEEDS:
-            metrics, predictions, folds = run_seed(dataset, seed, data, questions if dataset == "EdNet" else None)
+            metrics, predictions, folds = run_seed(dataset, seed, data, None)
             all_metrics.extend(metrics)
             all_predictions.extend(predictions)
             all_folds.extend(folds)
@@ -240,8 +173,8 @@ def main() -> None:
     pd.concat(all_predictions, ignore_index=True).to_csv(OUTPUT / "oof_predictions.csv.gz", index=False, compression="gzip")
     pd.DataFrame(all_folds).to_csv(OUTPUT / "fold_parameters.csv", index=False)
     save_json(OUTPUT / "complete.json", {
-        "datasets":["KMLE","EdNet"],"seeds":SEEDS,"outer_folds":OUTER_FOLDS,"inner_folds":INNER_FOLDS,
-        "ridge_alphas":RIDGE_ALPHAS.tolist(),"logistic_C":LOGISTIC_C.tolist(),
+        "datasets":["KMLE"],"seeds":SEEDS,"outer_folds":OUTER_FOLDS,"inner_folds":INNER_FOLDS,
+        "ridge_alphas":RIDGE_ALPHAS.tolist(),
         "elapsed_seconds":time.time()-started,
     })
 

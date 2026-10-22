@@ -23,7 +23,7 @@ START=time.time();completed=0
 
 def save(p,x):
  t=p.with_suffix('.pending');t.write_text(json.dumps(x,indent=2));t.replace(p)
-def status(phase,**kw):save(OUT/'analysis_status.json',dict(phase=phase,completed=completed,total=600,updated=time.time(),elapsed=time.time()-START,**kw))
+def status(phase,**kw):save(OUT/'analysis_status.json',dict(phase=phase,completed=completed,total=300,updated=time.time(),elapsed=time.time()-START,**kw))
 def ridge(ids,x,y):
  order=np.argsort(ids);x=x[order];y=y[order];ids=ids[order];pred=np.full(len(y),np.nan);rows=[]
  for fold,(tr,te) in enumerate(KFold(5,shuffle=True,random_state=20260920).split(ids)):
@@ -52,7 +52,7 @@ def main():
  global completed
  OUT.mkdir(parents=True,exist_ok=True)
  previous=pd.read_csv(SRC/'20260920_representation_study/results/static_probes/metrics.csv')
- for ds in ['KMLE','EdNet']:
+ for ds in ['KMLE']:
   data=np.load(SRC/'20260914_cdld_reviewer/cache'/ds/'full/responses.npy',mmap_mode='r')
   for seed in range(42,47):
    result=OUT/f'{ds}_seed{seed}';result.mkdir(exist_ok=True)
